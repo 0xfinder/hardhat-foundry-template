@@ -5,9 +5,9 @@ describe("Token contract", function () {
     it("Deployment should assign the total supply of tokens to the owner", async function () {
         const [owner] = await ethers.getSigners();
 
-        const Token = await ethers.getContractFactory("Waifu");
+        const Token = await ethers.getContractFactory("Token");
 
-        const hardhatToken = await Token.deploy("Waifu", "WAIFU", 69);
+        const hardhatToken = await Token.deploy("Token", "TKN", 69);
 
         const ownerBalance = await hardhatToken.balanceOf(owner.address);
         expect(await hardhatToken.totalSupply()).to.equal(ownerBalance);
@@ -16,9 +16,9 @@ describe("Token contract", function () {
     it("Should transfer tokens between accounts", async function () {
         const [owner, addr1, addr2] = await ethers.getSigners();
 
-        const Token = await ethers.getContractFactory("Waifu");
+        const Token = await ethers.getContractFactory("Token");
 
-        const hardhatToken = await Token.deploy("Waifu", "WAIFU", 69);
+        const hardhatToken = await Token.deploy("Token", "TKN", 69);
 
         // Transfer 50 tokens from owner to addr1
         await hardhatToken.transfer(addr1.address, 5);

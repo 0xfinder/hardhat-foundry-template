@@ -2,7 +2,6 @@
 pragma solidity ^0.8.12;
 
 import "hardhat/console.sol";
-import "@rari-capital/solmate/src/tokens/ERC20.sol";
 
 contract Greeter {
     string private greeting;

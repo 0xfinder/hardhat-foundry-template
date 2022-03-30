@@ -3,7 +3,7 @@ pragma solidity >=0.8.0;
 
 import "@rari-capital/solmate/src/tokens/ERC20.sol";
 
-contract Waifu is ERC20 {
+contract Token is ERC20 {
     constructor(
         string memory name,
         string memory symbol,
